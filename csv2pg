@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+#
+# Name: csv2pg
+# Description: csv2pg shell wrapper
+#
+#
+set -x
+# Check whether python 3 is available
+if command -v python3 &>/dev/null; then
+    ./src/python/csv2pg.py "$@"
+else
+    echo "Python 3 is not installed, please install Python 3 first."
+    echo "For more information see https://www.python.org/downloads/"
+fi
